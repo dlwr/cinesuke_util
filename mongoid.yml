@@ -1,0 +1,10 @@
+development:
+  sessions:
+    default:
+      database: cinesuke
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+  options:
+    raise_not_found_error: false

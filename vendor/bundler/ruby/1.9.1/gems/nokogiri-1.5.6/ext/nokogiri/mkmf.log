@@ -1,0 +1,373 @@
+package configuration for libxslt
+cflags: -I/usr/include/libxml2 
+ldflags: 
+libs: -lxslt -lxml2 -lz -lm -lrt -lxml2 
+
+package configuration for libxml-2.0
+cflags: -I/usr/include/libxml2 
+ldflags: 
+libs: -lxml2 
+
+package configuration for libiconv is not found
+find_header: checking for libxml/parser.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined       -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxml/parser.h>
+/* end */
+
+--------------------
+
+find_header: checking for libxslt/xslt.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libxslt/xslt.h>
+/* end */
+
+--------------------
+
+find_header: checking for libexslt/exslt.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -E -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libexslt/exslt.h>
+/* end */
+
+--------------------
+
+have_func: checking for iconv_open() in iconv.h... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined       -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:7:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <iconv.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))iconv_open; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for xmlParseDoc() in -lxml2... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined       -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xmlParseDoc’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xmlParseDoc; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined       -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xmlParseDoc’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xmlParseDoc(); return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for xsltParseStylesheetDoc() in -lxslt... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xsltParseStylesheetDoc’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xsltParseStylesheetDoc; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xsltParseStylesheetDoc’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xsltParseStylesheetDoc(); return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for exsltFuncRegister() in -lexslt... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘exsltFuncRegister’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))exsltFuncRegister; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘exsltFuncRegister’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { exsltFuncRegister(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlHasFeature()... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xmlHasFeature’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xmlHasFeature; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xmlHasFeature’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xmlHasFeature(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlFirstElementChild()... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xmlFirstElementChild’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xmlFirstElementChild; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xmlFirstElementChild’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xmlFirstElementChild(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetParserStructuredErrors()... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xmlRelaxNGSetParserStructuredErrors’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xmlRelaxNGSetParserStructuredErrors’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetParserStructuredErrors()... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xmlRelaxNGSetParserStructuredErrors’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetParserStructuredErrors; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xmlRelaxNGSetParserStructuredErrors’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xmlRelaxNGSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlRelaxNGSetValidStructuredErrors()... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xmlRelaxNGSetValidStructuredErrors’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xmlRelaxNGSetValidStructuredErrors; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xmlRelaxNGSetValidStructuredErrors’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xmlRelaxNGSetValidStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlSchemaSetValidStructuredErrors()... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xmlSchemaSetValidStructuredErrors’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetValidStructuredErrors; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xmlSchemaSetValidStructuredErrors’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xmlSchemaSetValidStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for xmlSchemaSetParserStructuredErrors()... -------------------- yes
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘xmlSchemaSetParserStructuredErrors’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+conftest.c:5:28: 警告: 変数 ‘p’ が設定されましたが使用されていません [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))xmlSchemaSetParserStructuredErrors; return 0; }
+/* end */
+
+"x86_64-pc-linux-gnu-gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I. -I/opt/local/include/libxml2 -I/usr/local/include/libxml2 -I/opt/local/include -I/usr/local/include -I/usr/include -I/usr/include -I/usr/include/libxml2    -O2 -march=native -pipe -fno-strict-aliasing -fPIC  -g -DXP_UNIX -Wall -Wcast-qual -Wwrite-strings -Wconversion -Wmissing-noreturn -Winline -I/usr/include/libxml2  -I/usr/include/libxml2  conftest.c  -L. -L/usr/lib64 -Wl,-R/usr/lib64 -L/opt/local/lib -Wl,-R/opt/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/lib64 -Wl,-R/usr/lib64 -L/usr/lib -Wl,-R/usr/lib -L. -Wl,-O1 -Wl,--as-needed -rdynamic -Wl,-export-dynamic -Wl,--no-undefined      -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -Wl,-R -Wl,/usr/lib64 -L/usr/lib64 -lruby19 -lexslt -lxslt -lxml2  -lxslt -lxml2 -lz -lm -lrt -lxml2  -lxml2  -lpthread -lrt -ldl -lcrypt -lm   -lc "
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘xmlSchemaSetParserStructuredErrors’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { xmlSchemaSetParserStructuredErrors(); return 0; }
+/* end */
+
+--------------------
+
