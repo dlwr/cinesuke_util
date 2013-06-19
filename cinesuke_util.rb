@@ -1,27 +1,20 @@
 # -*- coding: utf-8 -*-
 require 'rubygems'
-require 'google/api_client'
 require 'yaml'
 require 'open-uri'
 require 'nokogiri'
 require 'mongoid'
 require 'mongo'
-require 'pry-debugger'
 require 'date'
 
-def get_gclient(yaml)
-  oauth_yaml = YAML.load_file(yaml)
-  client = Google::APIClient.new
-  client.authorization.client_secret = oauth_yaml["client_secret"]
-  client.authorization.scope = oauth_yaml["scope"]
-  client.authorization.refresh_token = oauth_yaml["refresh_token"]
-  client.authorization.access_token = oauth_yaml["access_token"]
-  client
-end
-
 def open_without_garble(url)
-  html = open(url, "r:binary").read.force_encoding("UTF-8")
-  doc = Nokogiri::HTML(html, nil, 'utf-8')
+  begin
+    html = open(url, "r:binary").read.force_encoding("UTF-8")
+  rescue
+    nil
+  else
+    doc = Nokogiri::HTML(html, nil, 'utf-8')
+  end
 end
 
 Mongoid.load!("mongoid.yml", :development)
@@ -82,11 +75,21 @@ def update_movies_list
     puts theater.name
     url = EIGA_DOT_COM + theater.eiga_dot_com_url
     document = open_without_garble(url)
+    if document == nil
+      puts "	" + theater.name + "のページが見つかりません！！"
+      next
+    end
     movieList = document.search('[@class="itemBox"]')
     movieList.each { |m|
       title = m.search('h4').text
       next if title == ""
-      next if Movie.where(title: title).exists?
+      if Movie.where(title: title).exists?
+        if Movie.where(title: title)[0].length == 0
+          Movie.where(title: title).delete
+        else
+          next
+        end
+      end
       mDataTable = m.search('[@class="mData"]/table/tr/td')
       rda = mDataTable[0].text.split(/[年,月,日]/).map {|s| s.to_i}
       if (rda == nil || rda.size < 3 || rda[1] < 1 || 12 < rda[1] || rda[2] < 1 || 31 < rda[2])
@@ -117,57 +120,81 @@ def update_movies_list
 end
 
 def update_screen
-  # theater = Theater.where(name: "キネカ大森")[0]
-  theater = Theater.where(name: "新文芸坐")[0]
-  url = EIGA_DOT_COM + theater.eiga_dot_com_url
-  document = open_without_garble(url)
-  movieList = document.search('[@class="itemBox"]')
-  puts theater.name
-  movieList.each {|m|
-    title = m.search('h4').text
-    next if title == ""
-    unless Movie.where(title: title).exists?
-      puts title + "がデータベースに見つかりません"
+  Screen.delete_all
+  Theater.each {|theater|
+    url = EIGA_DOT_COM + theater.eiga_dot_com_url
+    document = open_without_garble(url)
+    if document == nil
+      puts "	" + theater.name + "のページが見つかりません！！"
       next
     end
-    atag = m.search('[@class="mSche"]/ul/li[1]')[0]
-    remarks = m.search('[@class="mSche"]/p').text
-    scheduleLink = atag.search('@href').text unless atag == nil
-    if scheduleLink
-      scheduleUrl = EIGA_DOT_COM + scheduleLink
-      scheduleDoc = open_without_garble(scheduleUrl)
-      schedule = Hash.new()
-      date = scheduleDoc.search('[@class="mSche"]/table/tr/th')
-      time = scheduleDoc.search('[@class="mSche"]/table/tr/td')
-      (0...date.size).each {|i|
-        schedule[date[i].text.gsub(/ |（.*）/, "")] = time[i].text.gsub(/\|.*/, "").split(" ")
-      }
-    end
-    movie = Movie.where(title: title)[0]
-    puts "	" + movie.title
-    schedule.each {|date, times|
+    movieList = document.search('[@class="itemBox"]')
+    puts theater.name
+    movieList.each {|m|
+      title = m.search('h4').text
+      next if title == ""
+      unless Movie.where(title: title).exists?
+        puts title + "がデータベースに見つかりません"
+        next
+      end
+      atag = m.search('[@class="mSche"]/ul/li[1]')[0]
+      remarks = m.search('[@class="mSche"]/p').text
+      scheduleLink = atag.search('@href').text unless atag == nil
+      if scheduleLink
+        scheduleUrl = EIGA_DOT_COM + scheduleLink
+        scheduleDoc = open_without_garble(scheduleUrl)
+        if (scheduleDoc == nil)
+          next
+        end
+        schedule = Hash.new()
+        date = scheduleDoc.search('[@class="mSche"]/table/tr/th')
+        time = scheduleDoc.search('[@class="mSche"]/table/tr/td')
+        (0...date.size).each {|i|
+          schedule[date[i].text.gsub(/ |（.*）/, "")] = time[i].text.gsub(/\|.*/, "").split(" ")
+        }
+      end
+      movie = Movie.where(title: title)[0]
+      puts "	" + movie.title
+
+      schedule.each {|date, times|
       next if times == []
       month = date.split("/")[0].to_i
       day = date.split("/")[1].to_i
-      times.each {|time|
-        hour = time.split(":")[0].to_i
-        minute = time.split(":")[1].to_i
-        midnight = false
-        if hour >= 24
-          hour = hour - 24
-          midnight = true
-        end
-        startTime = Time.local(2013, month, day, hour, minute)
-        endTime = startTime + 60 * movie.length
-        Screen.find_or_create_by(start_time: startTime,
-                                 remarks: remarks,
-                                 theater: theater,
-                                 movie: movie)
-        # puts "		" + startTime.to_s
+        times.each {|time|
+          hour = time.split(":")[0].to_i
+          minute = time.split(":")[1].to_i
+          midnight = false
+          if hour >= 24
+            hour = hour - 24
+            midnight = true
+          end
+          startTime = Time.local(2013, month, day, hour, minute)
+          Screen.find_or_create_by(start_time: startTime,
+                                   remarks: remarks,
+                                   theater: theater,
+                                   movie: movie)
+        }
       }
     }
   }
 end
 
-#update_movies_list
+def movie_now
+  now_movie = Hash.new()
+  Screen.each {|screen|
+    now_movie[Movie.where(_id: screen.movie_id)[0].title] = true
+  }
+  Movie.each {|movie|
+    if now_movie[movie.title] == true
+      movie.update_attribute(:now, true)
+    else
+      movie.update_attribute(:now, false)
+    end
+    movie.save
+  }
+end
+
+# update_theater_list
+update_movies_list
 update_screen
+movie_now

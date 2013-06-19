@@ -1,0 +1,27 @@
+
+[1mFrom:[0m /home/dlwr/work/cinesuke_util/vendor/bundler/ruby/1.9.1/gems/mongoid-3.1.1/lib/mongoid/finders.rb @ line 14 Mongoid::Finders#each:
+
+    [1;34m13[0m: delegate \
+ => [1;34m14[0m:   [1;32m:aggregates[0m,
+    [1;34m15[0m:   [1;32m:avg[0m,
+    [1;34m16[0m:   [1;32m:distinct[0m,
+    [1;34m17[0m:   [1;32m:each[0m,
+    [1;34m18[0m:   [1;32m:each_with_index[0m,
+    [1;34m19[0m:   [1;32m:extras[0m,
+    [1;34m20[0m:   [1;32m:find_and_modify[0m,
+    [1;34m21[0m:   [1;32m:find_or_create_by[0m,
+    [1;34m22[0m:   [1;32m:find_or_initialize_by[0m,
+    [1;34m23[0m:   [1;32m:first_or_create[0m,
+    [1;34m24[0m:   [1;32m:first_or_create![0m,
+    [1;34m25[0m:   [1;32m:first_or_initialize[0m,
+    [1;34m26[0m:   [1;32m:for_js[0m,
+    [1;34m27[0m:   [1;32m:geo_near[0m,
+    [1;34m28[0m:   [1;32m:includes[0m,
+    [1;34m29[0m:   [1;32m:map_reduce[0m,
+    [1;34m30[0m:   [1;32m:max[0m,
+    [1;34m31[0m:   [1;32m:min[0m,
+    [1;34m32[0m:   [1;32m:pluck[0m,
+    [1;34m33[0m:   [1;32m:sum[0m,
+    [1;34m34[0m:   [1;32m:update[0m,
+    [1;34m35[0m:   [1;32m:update_all[0m, [35mto[0m: [1;32m:with_default_scope[0m
+
